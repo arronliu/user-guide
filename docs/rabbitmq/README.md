@@ -139,19 +139,19 @@ Haproxy 节点监控管理：
 ## rabbitmqcli 命令示例简介
 
 官网参考地址：https://www.rabbitmq.com/man/rabbitmqctl.1.man.html
->注意：使用 root/rabbitmq 登录 client 节点，请勿随便使用集群管理命令去管理集群。client 使用 -n nodename 连接集群中的节点，nodename 格式为 rabbit@hostname ，可以在 client节点 /etc/hosts 下看到有哪些 host ，也可以在 rabbitmq 的 web 界面直接看到 nodename。
+>注意：使用 root/rabbitmq 登录 client 节点，请勿随便使用集群管理命令去管理集群。client 使用 -n nodename 连接集群中的 RabbitMQ 磁盘节点或者内存节点，nodename 格式为 rabbit@hostname ，可以在 client节点 /etc/hosts 下看到有哪些 host ，也可以在 rabbitmq 的 web 界面直接看到 nodename。
 
 ### 添加用户
 
->rabbitmqctl -n rabbit@i-1zo2scr7 add_user username password
+>rabbitmqctl -n rabbit@i-1zo2scr7 add_user [username]  [password]
 
 ### 删除用户
 
->rabbitmqctl -n rabbit@i-1zo2scr7  delete_user username
+>rabbitmqctl -n rabbit@i-1zo2scr7  delete_user [username]
 
 ### 创建 vhost
 
->rabbitmqctl -n rabbit@i-1zo2scr7 add_vhost vhostpath
+>rabbitmqctl -n rabbit@i-1zo2scr7 add_vhost  [vhostpath]
 
 ### 清空队列
 
